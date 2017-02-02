@@ -97,7 +97,7 @@ $( document ).ready( function( ) {
                   
                   
       
-                  $( '#facebook_login' ).hide( );
+                  $('#facebook_login').addClass('loading');
                   console.log( firebase.auth( ).currentUser.uid );
                   king_voted_list.orderByKey( )
                         .equalTo( user.uid )
@@ -118,6 +118,7 @@ $( document ).ready( function( ) {
                               if ( value ) {
                                     $( '.queen' ).addClass('disabled');
                               }
+                              $( '#facebook_login' ).hide( );
                               $( '#float' ).show( );
                         } );
                         
