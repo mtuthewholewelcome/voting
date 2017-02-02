@@ -14,7 +14,7 @@ $( document ).ready( function( ) {
       var king_voted_list = firebase.database( ).ref( ).child( 'king' );
       var queen_voted_list = firebase.database( ).ref( ).child( 'queen' );
 
-      // $('#float').hide();
+      $('#float').hide();
 
       $( '.king' ).click( function( e ) {
             e.preventDefault( );
