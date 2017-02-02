@@ -1,79 +1,171 @@
-a{
-	padding: 0 5px;
-	text-decoration: none;
-	color: #E64A19;
-}
-a:hover{
-	text-decoration: none;
-	color: #D32F2F;
+/*button {
+      margin: 0 !important;
+      border-radius: 0 0 2px 2px !important;
 }
 
-.container{
-	margin-top: 30px;
-	display: none;
+img {
+      width: 100%;
+      height: 100%;
 }
 
-.logo{
-	height: 45px;
+.card {
+      border-radius: 2px !important;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+}
+*/
+
+html {
+      max-width: 100%;
+      overflow-x: hidden;
 }
 
-.card{
-	margin-top: 10px;
-	border: 0;
-	border-radius: 2px;
-	box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+body {
+      background: #f5f5f5;
+      margin: 50px auto;
 }
 
-.btn{
-	border-radius: 2px;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+#banner {
+      top: 0;
+      display: flex;
+      width: inherit;
+      background-color: #3B98F4;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      position: fixed;
+      z-index: 20;
 }
 
-#banner{
-	top: 0;
-	display: block;
-	height: 50px;
-	width: 100%;
-	background-color: #3B98F4;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    position: fixed;
-    z-index: 20;
+#avatar_selecter {
+      margin-top: 50px;
+      display: flex;
+      width: 100%;
+      background-color: #3B98F4;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
 }
 
-#banner>img{
-	height: 45px;
-}
-#banner>span{
-	margin: 4px 15px;
-	vertical-align: middle;
-	display: inline-block;
-	position: relative;
-	border-radius: 25px;
-	color: white;
-	padding: 7px 2px;
-	border: 2px solid white;
+#selecter {
+      top: 50px;
+      width: 100%;
+      position: fixed;
+      z-index: 10;
 }
 
-button{
-	margin: 0 30%;
-	width: 40%;
-	border: 0;
-	padding: 7px;
-	color: white;
-	background-color: #3B98F4;
-	position: fixed;
-	top: 50%;
-	border-radius: 2px;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+#selecter>a {
+      border-radius: 0;
+      width: 5% !important;
 }
 
-div>p{
-	padding-left: 20px;
+#avatar_selecter>p {
+      border-left: 1px solid white;
+      text-align: center;
+      padding: 5px !important;
+      width: 50% !important;
+      margin: 0 !important;
 }
-p>span{
-	color: grey;
+
+.avatar {
+      padding: 1px 20px 0px 20px;
+      border: 1px solid white;
+      height: 30px !important;
+}
+
+#banner>img {
+      left: 0;
+      height: 50px;
+      margin: auto 2%;
+}
+
+#banner-text {
+      color: white;
+      padding: 0 !important;
+      margin: 0 !important;
+      font-size: 1.3em;
+      line-height: 2.6em;
+}
+
+.mdl-card {
+      margin: 4% auto;
+      width: 90% !important;
+      min-height: 150px !important;
+}
+
+
+/*
+.mdl-card + .mdl-card {
+      margin-top: 40px;
+}
+*/
+
+.mdl-card--horizontal {
+      min-height: 200px;
+}
+
+.mdl-card--horizontal table {
+      border-spacing: 0;
+}
+
+.mdl-card__title,
+.mdl-card__supporting-text {
+      padding: 5% !important;
+}
+
+.mdl-card__supporting-text {
+      height: 80px !important;
+      font-size: 0.8rem !important;
+}
+
+.img {
+      height: 100%;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      background-size: auto 100% !important;
+}
+
+.button {
+      margin: 0;
+      width: 100%;
+}
+
+.mdl-card__actions {
+      display: flex !important;
+      align-items: center !important;
+}
+
+td.content {
+      width: 60% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+}
+
+table,
+tr {
+      width: 100% !important;
+      height: 200px !important;
+}
+
+#panel {
+      top: 80px;
+      width: 200%;
+      overflow-x: hidden;
+      position: relative;
+      left: 0;
+}
+
+#queen,
+#king {
+      width: 50%;
+      float: left;
+}
+
+#float{
+  width: 100% !important;
+}
+
+.facebook {
+      position: fixed;
+      margin: 0 25% !important;
+      top: 50%;
+      width: 50%;
 }
