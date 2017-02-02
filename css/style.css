@@ -154,3 +154,7 @@ tr {
       top: 50%;
       width: 50%;
 }
+
+td>p{
+  cursor: pointer;
+}
