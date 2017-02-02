@@ -56,8 +56,8 @@ $( document ).ready( function( ) {
             firebase.auth( ).signInWithPopup( provider )
                   .then( function( result ) {
                         
-                        $( '#facebook_login' ).hide( );
-                        $( '#float' ).show();
+                        // $( '#facebook_login' ).hide( );
+                        // $( '#float' ).show();
 
                         king_voted_list.orderByKey( )
                               .equalTo( result.user.uid )
