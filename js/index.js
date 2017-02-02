@@ -25,7 +25,7 @@ $( document ).ready( function( ) {
                         var updates = {};
                         updates[ 'king/' + firebase.auth( ).currentUser.uid ] = 1;
                         firebase.database( ).ref( ).update( updates );
-                        $( '.king' ).prop( 'disabled', true );
+                        $( '.king' ).addClass('disabled');
                   }
                   return vote;
             } );
@@ -33,14 +33,14 @@ $( document ).ready( function( ) {
 
       $( '.queen' ).click( function( e ) {
             e.preventDefault( );
-
+            console.log(e.target.id);
             queen_vote.child( e.target.id ).transaction( function( vote ) {
                   if ( vote != null ) {
                         vote++;
                         var updates = {};
                         updates[ 'queen/' + firebase.auth( ).currentUser.uid ] = 1;
                         firebase.database( ).ref( ).update( updates );
-                        $( '.queen' ).prop( 'disabled', true );
+                        $( '.queen' ).addClass('disabled');
                   }
                   return vote;
             } );
@@ -65,7 +65,7 @@ $( document ).ready( function( ) {
                               .then( function( snapshot ) {
                                     var value = snapshot.val( );
                                     if ( value ) {
-                                          $( '.king' ).prop( 'disabled', true );
+                                          $( '.king' ).addClass('disabled');
                                     }
                               } );
 
@@ -75,7 +75,7 @@ $( document ).ready( function( ) {
                               .then( function( snapshot ) {
                                     var value = snapshot.val( );
                                     if ( value ) {
-                                          $( '.queen' ).prop( 'disabled', true );
+                                          $( '.queen' ).addClass('disabled');
                                     }
                               } );
 
@@ -95,10 +95,9 @@ $( document ).ready( function( ) {
       firebase.auth( ).onAuthStateChanged( function( user ) {
             if ( user ) {
                   
+                  
+      
                   $( '#facebook_login' ).hide( );
-                  $( '#float' ).show( );
-      
-      
                   console.log( firebase.auth( ).currentUser.uid );
                   king_voted_list.orderByKey( )
                         .equalTo( user.uid )
@@ -106,7 +105,8 @@ $( document ).ready( function( ) {
                         .then( function( snapshot ) {
                               var value = snapshot.val( );
                               if ( value ) {
-                                    $( '.king' ).prop( 'disabled', true );
+                                    $( '.king' ).addClass('disabled');
+
                               }
                         } );
 
@@ -116,9 +116,12 @@ $( document ).ready( function( ) {
                         .then( function( snapshot ) {
                               var value = snapshot.val( );
                               if ( value ) {
-                                    $( '.queen' ).prop( 'disabled', true );
+                                    $( '.queen' ).addClass('disabled');
                               }
+                              $( '#float' ).show( );
                         } );
+                        
+                        
 
 
             } else {
