@@ -34,12 +34,15 @@ $( document ).ready( function( ) {
       $( '.queen' ).click( function( e ) {
             e.preventDefault( );
             console.log(e.target.id);
+            var obj = $(this);
+            obj.addClass('loading');
             queen_vote.child( e.target.id ).transaction( function( vote ) {
                   if ( vote != null ) {
                         vote++;
                         var updates = {};
                         updates[ 'queen/' + firebase.auth( ).currentUser.uid ] = 1;
                         firebase.database( ).ref( ).update( updates );
+                        obj.removeClass('loading');
                         $( '.queen' ).addClass('disabled');
                   }
                   return vote;
@@ -59,25 +62,25 @@ $( document ).ready( function( ) {
                         // $( '#facebook_login' ).hide( );
                         // $( '#float' ).show();
 
-                        king_voted_list.orderByKey( )
-                              .equalTo( result.user.uid )
-                              .once( 'value' )
-                              .then( function( snapshot ) {
-                                    var value = snapshot.val( );
-                                    if ( value ) {
-                                          $( '.king' ).addClass('disabled');
-                                    }
-                              } );
+                        // king_voted_list.orderByKey( )
+                        //       .equalTo( result.user.uid )
+                        //       .once( 'value' )
+                        //       .then( function( snapshot ) {
+                        //             var value = snapshot.val( );
+                        //             if ( value ) {
+                        //                   $( '.king' ).addClass('disabled');
+                        //             }
+                        //       } );
 
-                        queen_voted_list.orderByKey( )
-                              .equalTo( result.user.uid )
-                              .once( 'value' )
-                              .then( function( snapshot ) {
-                                    var value = snapshot.val( );
-                                    if ( value ) {
-                                          $( '.queen' ).addClass('disabled');
-                                    }
-                              } );
+                        // queen_voted_list.orderByKey( )
+                        //       .equalTo( result.user.uid )
+                        //       .once( 'value' )
+                        //       .then( function( snapshot ) {
+                        //             var value = snapshot.val( );
+                        //             if ( value ) {
+                        //                   $( '.queen' ).addClass('disabled');
+                        //             }
+                        //       } );
 
                   } )
                   .catch( function( error ) {
@@ -97,7 +100,6 @@ $( document ).ready( function( ) {
                   
                   
       
-                  $('#facebook_login').addClass('loading');
                   console.log( firebase.auth( ).currentUser.uid );
                   king_voted_list.orderByKey( )
                         .equalTo( user.uid )
@@ -135,7 +137,6 @@ $( document ).ready( function( ) {
             $( "#panel" ).animate( {
                   left: "-100%"
             }, 1000 );
-
       } );
 
       $( "#queen" ).click( function( ) {
